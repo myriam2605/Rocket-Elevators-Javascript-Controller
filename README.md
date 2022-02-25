@@ -13,9 +13,10 @@ The output will be like:
 
 you can also use a new terminal with node .\residential_controller.js to execute my Scenario.
 
-You have uncomment the scenario as well as the console.log in the body of the code.
+You have to uncomment the scenario as well as the console.log in the body of the code.
 
 '==================================Scenario =================================================
+
 SET column TO NEW Column WITH 1 AND online AND 10 AND 2 '//id, status, amountOfFloors, amountOfElevators
 
 SET first elevator floor OF column elevatorsList TO 2
@@ -23,6 +24,7 @@ SET second elevator floor OF column elevatorsList TO 6
 
 SET elevator TO CALL column requestElevator WITH 3 AND Up RETURNING elevator
 CALL elevator requestFloor WITH 7
+
 '==================================End Scenario =============================================
 
 the result will be explain in the video link :
