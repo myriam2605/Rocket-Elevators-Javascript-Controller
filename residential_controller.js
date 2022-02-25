@@ -191,7 +191,7 @@ class Elevator {
                 while (this.currentFloor < destination) {
                     this.currentFloor++;
                     this.screenDisplay = this.currentFloor;
-                    console.log("elevator going up", this.currentFloor);
+                    // console.log("elevator going up", this.currentFloor);
                 }
             } else if (this.currentFloor > destination) {
                 this.direction = "down";
@@ -199,13 +199,13 @@ class Elevator {
                 while (this.currentFloor > destination) {
                     this.currentFloor--;
                     this.screenDisplay = this.currentFloor;
-                    console.log("elevator going down", this.currentFloor);
+                    // console.log("elevator going down", this.currentFloor);
                 }
             }
 
             this.status = "stopped";
             this.floorRequestList.shift();
-            console.log("elevator stopped", this.currentFloor);
+            // console.log("elevator stopped", this.currentFloor);
         }
         this.status = "idle";
     }
@@ -249,13 +249,13 @@ class Door {
     }
 }
 
-var column = new Column(1, 10, 2);
-column.elevatorList[0].currentFloor = 2;
-column.elevatorList[0].status = "idle";
-column.elevatorList[1].currentFloor = 6;
-column.elevatorList[1].status = "idle";
-let bestElevator = column.requestElevator(3, "up");
-bestElevator.requestFloor(7);
-console.log(column);
+// var column = new Column(1, 10, 2);
+// column.elevatorList[0].currentFloor = 2;
+// column.elevatorList[0].status = "idle";
+// column.elevatorList[1].currentFloor = 6;
+// column.elevatorList[1].status = "idle";
+// let bestElevator = column.requestElevator(3, "up");
+// bestElevator.requestFloor(7);
+// console.log(column);
 
 module.exports = { Column, Elevator, CallButton, FloorRequestButton, Door };
