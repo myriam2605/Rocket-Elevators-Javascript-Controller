@@ -27,4 +27,4 @@ CALL elevator requestFloor WITH 7
 
 '==================================End Scenario =============================================
 
-the result will be explain in the video link :
+the result will be explain in the link below :
