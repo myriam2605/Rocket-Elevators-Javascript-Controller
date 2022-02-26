@@ -165,6 +165,7 @@ class Elevator {
     }
 
     createFloorRequestButtons(amountOfFloors) {
+        // button inside the elevator
         let buttonFloor = 1;
         for (let i = 0; i < amountOfFloors; i++) {
             let floorRequestButton = new FloorRequestButton(buttonFloor, buttonFloor);
@@ -191,7 +192,7 @@ class Elevator {
                 while (this.currentFloor < destination) {
                     this.currentFloor++;
                     this.screenDisplay = this.currentFloor;
-                    // console.log("elevator going up", this.currentFloor);
+                    console.log("elevator going up", this.currentFloor);
                 }
             } else if (this.currentFloor > destination) {
                 this.direction = "down";
@@ -199,22 +200,22 @@ class Elevator {
                 while (this.currentFloor > destination) {
                     this.currentFloor--;
                     this.screenDisplay = this.currentFloor;
-                    // console.log("elevator going down", this.currentFloor);
+                    console.log("elevator going down", this.currentFloor);
                 }
             }
 
             this.status = "stopped";
             this.floorRequestList.shift();
-            // console.log("elevator stopped", this.currentFloor);
+            console.log("elevator stopped", this.currentFloor);
         }
         this.status = "idle";
     }
 
     sortFloorList() {
         if ((this.direction = "up")) {
-            this.floorRequestList.sort();
+            this.floorRequestList.sort(); // sort floorRequestList in ascending
         } else {
-            this.floorRequestList.reverse();
+            this.floorRequestList.reverse(); //sort floorRequestList in descending
         }
         return this.floorRequestList;
     }
@@ -226,6 +227,7 @@ class Elevator {
 }
 
 class CallButton {
+    // a button to use to call the elevator
     constructor(id, floor, direction) {
         this.ID = id;
         this.status = "on"; //"on, off"
@@ -235,6 +237,7 @@ class CallButton {
 }
 
 class FloorRequestButton {
+    // a button inside the elevator to go to the requested floor
     constructor(id, floor) {
         this.ID = id;
         this.status = "OFF";
@@ -249,6 +252,7 @@ class Door {
     }
 }
 
+//--------------------------------------------------  Main ---------------------------------------------------------------------
 // var column = new Column(1, 10, 2);
 // column.elevatorList[0].currentFloor = 2;
 // column.elevatorList[0].status = "idle";
